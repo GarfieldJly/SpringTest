@@ -19,7 +19,7 @@ public class MybatisConfigGenerator {
     // public static final String URL = "jdbc:mysql://127.0.0.1:3306/maijia?zeroDateTimeBehavior=convertToNull";
     // public static final String USER = "root";
     // public static final String PASSWORD = "you";
-    public String URL = "jdbc:mysql://dev.jingzheit.com:3306/wechatorder?characterEncoding=utf-8&useSSL=false";
+    public String URL = "jdbc:mysql://dev.jingzheit.com:3306/xinhua_dictionary?characterEncoding=utf-8&useSSL=false";
 
     public String USER = "root";
     public String PASSWORD = "Tryme!23";
@@ -35,8 +35,8 @@ public class MybatisConfigGenerator {
 
     public static void main(String[] args) {
         try {
-            String schemaName = "wechatorder";
-            String tableName = "user_follow";
+            String schemaName = "xinhua_dictionary";
+            String tableName = "xiehouyu";
             new MybatisConfigGenerator().generate(schemaName, tableName);
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();

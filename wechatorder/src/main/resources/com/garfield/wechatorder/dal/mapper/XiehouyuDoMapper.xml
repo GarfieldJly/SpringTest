@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.garfield.wechatorder.dal.mapper.XiehouyuDoMapper">
+  <resultMap id="BaseResultMap" type="com.garfield.wechatorder.dal.domain.XiehouyuDo">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <result column="id" jdbcType="INTEGER" property="id" />
+    <result column="riddle" jdbcType="VARCHAR" property="riddle" />
+    <result column="answer" jdbcType="VARCHAR" property="answer" />
+    <result column="created_at" jdbcType="INTEGER" property="createdAt" />
+    <result column="updated_at" jdbcType="INTEGER" property="updatedAt" />
+    <result column="is_deleted" jdbcType="TINYINT" property="isDeleted" />
+  </resultMap>
+
+  <resultMap id="BoResultMap" type="com.garfield.wechatorder.bean.XiehouyuBo">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <result column="riddle" jdbcType="VARCHAR" property="riddle" />
+    <result column="answer" jdbcType="VARCHAR" property="answer" />
+  </resultMap>
+
+  <select id="getXiehouyuList" resultMap="BoResultMap">
+    select riddle,answer from xiehouyu
+    <where>
+      is_deleted = 0
+      <if test="data.riddle!=null">
+        and riddle like concat('%', #{data.riddle}, '%')
+      </if>
+      <if test="data.answer!=null">
+        and answer like concat('%', #{data.answer}, '%')
+      </if>
+    </where>
+  </select>
+</mapper>

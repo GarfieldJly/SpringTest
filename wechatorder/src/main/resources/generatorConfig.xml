@@ -11,12 +11,12 @@
         <property name="endingDelimiter" value="`"/>
         <property name="javaFileEncoding" value="UTF-8"/>
 
-        <!--<plugin type="tk.mybatis.mapper.generator.MapperPlugin">-->
-            <!--<property name="mappers" value="com.handarui.qafun.manager.dal.util.MyMapper"/>-->
-        <!--</plugin>-->
+        <plugin type="tk.mybatis.mapper.generator.MapperPlugin">
+            <property name="mappers" value="com.garfield.wechatorder.util.db.MyMapper"/>
+        </plugin>
 
         <jdbcConnection driverClass="com.mysql.cj.jdbc.Driver"
-                        connectionURL="jdbc:mysql://dev.jingzheit.com:3306/wechatorder?characterEncoding=utf-8&amp;useSSL=false"
+                        connectionURL="jdbc:mysql://dev.jingzheit.com:3306/xinhua_dictionary?characterEncoding=utf-8&amp;useSSL=false"
                         userId="root"
                         password="Tryme!23">
         </jdbcConnection>
@@ -51,75 +51,91 @@
         <!-- 生成单表
             mvn -Dmybatis.generator.contexts=Mysql -Dmybatis.generator.tableNames=app_user -Dmybatis.generator.overwrite=true mybatis-generator:generate
         -->
-        <table tableName="note" domainObjectName="NoteDo" enableCountByExample="false">
+        <!--<table tableName="note" domainObjectName="NoteDo" enableCountByExample="false">-->
+            <!--<generatedKey column="id" sqlStatement="MySql" identity="true"/>-->
+            <!--<columnOverride column="id" property="id" javaType="java.lang.Long" jdbcType="INTEGER"/>-->
+            <!--<columnOverride column="user_id" property="userId" javaType="java.lang.Long" jdbcType="INTEGER"/>-->
+            <!--<columnOverride column="created_at" property="createdAt" javaType="java.lang.Long" jdbcType="INTEGER"/>-->
+            <!--<columnOverride column="updated_at" property="updatedAt" javaType="java.lang.Long" jdbcType="INTEGER"/>-->
+            <!--<columnOverride column="is_deleted" property="isDeleted" javaType="java.lang.Integer" jdbcType="TINYINT"/>-->
+        <!--</table>-->
+        <!--<table tableName="division" domainObjectName="DivisionDo" enableCountByExample="false">-->
+            <!--<generatedKey column="id" sqlStatement="MySql" identity="true"/>-->
+            <!--<columnOverride column="id" property="id" javaType="java.lang.Long" jdbcType="INTEGER"/>-->
+            <!--<columnOverride column="level" property="level" javaType="java.lang.Integer" jdbcType="TINYINT"/>-->
+            <!--<columnOverride column="created_at" property="createdAt" javaType="java.lang.Long" jdbcType="INTEGER"/>-->
+            <!--<columnOverride column="updated_at" property="updatedAt" javaType="java.lang.Long" jdbcType="INTEGER"/>-->
+            <!--<columnOverride column="is_deleted" property="isDeleted" javaType="java.lang.Integer" jdbcType="TINYINT"/>-->
+        <!--</table>-->
+        <!--<table tableName="mate_note" domainObjectName="MateNoteDo" enableCountByExample="false">-->
+            <!--<generatedKey column="id" sqlStatement="MySql" identity="true"/>-->
+            <!--<columnOverride column="id" property="id" javaType="java.lang.Long" jdbcType="INTEGER"/>-->
+            <!--<columnOverride column="user_id" property="userId" javaType="java.lang.Long" jdbcType="INTEGER"/>-->
+            <!--<columnOverride column="start_time" property="startTime" javaType="java.lang.Long" jdbcType="INTEGER"/>-->
+            <!--<columnOverride column="end_time" property="endTime" javaType="java.lang.Long" jdbcType="INTEGER"/>-->
+            <!--<columnOverride column="created_at" property="createdAt" javaType="java.lang.Long" jdbcType="INTEGER"/>-->
+            <!--<columnOverride column="updated_at" property="updatedAt" javaType="java.lang.Long" jdbcType="INTEGER"/>-->
+            <!--<columnOverride column="is_deleted" property="isDeleted" javaType="java.lang.Integer" jdbcType="TINYINT"/>-->
+        <!--</table>-->
+        <!--<table tableName="note_comment" domainObjectName="NoteCommentDo" enableCountByExample="false">-->
+            <!--<generatedKey column="id" sqlStatement="MySql" identity="true"/>-->
+            <!--<columnOverride column="id" property="id" javaType="java.lang.Long" jdbcType="INTEGER"/>-->
+            <!--<columnOverride column="note_id" property="noteId" javaType="java.lang.Long" jdbcType="INTEGER"/>-->
+            <!--<columnOverride column="user_id" property="userId" javaType="java.lang.Long" jdbcType="INTEGER"/>-->
+            <!--<columnOverride column="created_at" property="createdAt" javaType="java.lang.Long" jdbcType="INTEGER"/>-->
+            <!--<columnOverride column="updated_at" property="updatedAt" javaType="java.lang.Long" jdbcType="INTEGER"/>-->
+            <!--<columnOverride column="is_deleted" property="isDeleted" javaType="java.lang.Integer" jdbcType="TINYINT"/>-->
+        <!--</table>-->
+        <!--<table tableName="role" domainObjectName="RoleDo" enableCountByExample="false">-->
+            <!--<generatedKey column="id" sqlStatement="MySql" identity="true"/>-->
+            <!--<columnOverride column="id" property="id" javaType="java.lang.Long" jdbcType="INTEGER"/>-->
+            <!--<columnOverride column="created_at" property="createdAt" javaType="java.lang.Long" jdbcType="INTEGER"/>-->
+            <!--<columnOverride column="updated_at" property="updatedAt" javaType="java.lang.Long" jdbcType="INTEGER"/>-->
+            <!--<columnOverride column="is_deleted" property="isDeleted" javaType="java.lang.Integer" jdbcType="TINYINT"/>-->
+        <!--</table>-->
+        <!--<table tableName="scenic_spot" domainObjectName="ScenicSpotDo" enableCountByExample="false">-->
+            <!--<generatedKey column="id" sqlStatement="MySql" identity="true"/>-->
+            <!--<columnOverride column="id" property="id" javaType="java.lang.Long" jdbcType="INTEGER"/>-->
+            <!--<columnOverride column="division_id" property="divisionId" javaType="java.lang.Long" jdbcType="INTEGER"/>-->
+            <!--<columnOverride column="play_time" property="playTime" javaType="java.lang.Long" jdbcType="INTEGER"/>-->
+            <!--<columnOverride column="longitude" property="longitude" javaType="double" jdbcType="DOUBLE"/>-->
+            <!--<columnOverride column="latitude" property="latitude" javaType="double" jdbcType="DOUBLE"/>-->
+            <!--<columnOverride column="level" property="level" javaType="java.lang.Integer" jdbcType="TINYINT"/>-->
+            <!--<columnOverride column="created_at" property="createdAt" javaType="java.lang.Long" jdbcType="INTEGER"/>-->
+            <!--<columnOverride column="updated_at" property="updatedAt" javaType="java.lang.Long" jdbcType="INTEGER"/>-->
+            <!--<columnOverride column="is_deleted" property="isDeleted" javaType="java.lang.Integer" jdbcType="TINYINT"/>-->
+        <!--</table>-->
+        <!--<table tableName="user" domainObjectName="UserDo" enableCountByExample="false">-->
+            <!--<generatedKey column="id" sqlStatement="MySql" identity="true"/>-->
+            <!--<columnOverride column="id" property="id" javaType="java.lang.Long" jdbcType="INTEGER"/>-->
+            <!--<columnOverride column="gender" property="gender" javaType="java.lang.Integer" jdbcType="TINYINT"/>-->
+            <!--<columnOverride column="invalid_pwd_count" property="invalidPwdCount" javaType="java.lang.Long" jdbcType="INTEGER"/>-->
+            <!--<columnOverride column="role_id" property="roleId" javaType="java.lang.Long" jdbcType="INTEGER"/>-->
+            <!--<columnOverride column="created_at" property="createdAt" javaType="java.lang.Long" jdbcType="INTEGER"/>-->
+            <!--<columnOverride column="updated_at" property="updatedAt" javaType="java.lang.Long" jdbcType="INTEGER"/>-->
+            <!--<columnOverride column="is_deleted" property="isDeleted" javaType="java.lang.Integer" jdbcType="TINYINT"/>-->
+        <!--</table>-->
+        <!--<table tableName="user_follow" domainObjectName="UserFollowDo" enableCountByExample="false">-->
+            <!--<generatedKey column="id" sqlStatement="MySql" identity="true"/>-->
+            <!--<columnOverride column="id" property="id" javaType="java.lang.Long" jdbcType="INTEGER"/>-->
+            <!--<columnOverride column="user_id" property="userId" javaType="java.lang.Long" jdbcType="INTEGER"/>-->
+            <!--<columnOverride column="follow_id" property="followId" javaType="java.lang.Long" jdbcType="INTEGER"/>-->
+            <!--<columnOverride column="created_at" property="createdAt" javaType="java.lang.Long" jdbcType="INTEGER"/>-->
+            <!--<columnOverride column="updated_at" property="updatedAt" javaType="java.lang.Long" jdbcType="INTEGER"/>-->
+            <!--<columnOverride column="is_deleted" property="isDeleted" javaType="java.lang.Integer" jdbcType="TINYINT"/>-->
+        <!--</table>-->
+
+        <!--<table tableName="idiom" domainObjectName="IdiomDo" enableCountByExample="false">-->
+            <!--<generatedKey column="id" sqlStatement="MySql" identity="true"/>-->
+            <!--<columnOverride column="id" property="id" javaType="java.lang.Long" jdbcType="INTEGER"/>-->
+            <!--<columnOverride column="created_at" property="createdAt" javaType="java.lang.Long" jdbcType="INTEGER"/>-->
+            <!--<columnOverride column="updated_at" property="updatedAt" javaType="java.lang.Long" jdbcType="INTEGER"/>-->
+            <!--<columnOverride column="is_deleted" property="isDeleted" javaType="java.lang.Integer" jdbcType="TINYINT"/>-->
+        <!--</table>-->
+
+        <table tableName="xiehouyu" domainObjectName="XiehouyuDo" enableCountByExample="false">
             <generatedKey column="id" sqlStatement="MySql" identity="true"/>
             <columnOverride column="id" property="id" javaType="java.lang.Long" jdbcType="INTEGER"/>
-            <columnOverride column="user_id" property="userId" javaType="java.lang.Long" jdbcType="INTEGER"/>
-            <columnOverride column="created_at" property="createdAt" javaType="java.lang.Long" jdbcType="INTEGER"/>
-            <columnOverride column="updated_at" property="updatedAt" javaType="java.lang.Long" jdbcType="INTEGER"/>
-            <columnOverride column="is_deleted" property="isDeleted" javaType="java.lang.Integer" jdbcType="TINYINT"/>
-        </table>
-        <table tableName="division" domainObjectName="DivisionDo" enableCountByExample="false">
-            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
-            <columnOverride column="id" property="id" javaType="java.lang.Long" jdbcType="INTEGER"/>
-            <columnOverride column="level" property="level" javaType="java.lang.Integer" jdbcType="TINYINT"/>
-            <columnOverride column="created_at" property="createdAt" javaType="java.lang.Long" jdbcType="INTEGER"/>
-            <columnOverride column="updated_at" property="updatedAt" javaType="java.lang.Long" jdbcType="INTEGER"/>
-            <columnOverride column="is_deleted" property="isDeleted" javaType="java.lang.Integer" jdbcType="TINYINT"/>
-        </table>
-        <table tableName="mate_note" domainObjectName="MateNoteDo" enableCountByExample="false">
-            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
-            <columnOverride column="id" property="id" javaType="java.lang.Long" jdbcType="INTEGER"/>
-            <columnOverride column="user_id" property="userId" javaType="java.lang.Long" jdbcType="INTEGER"/>
-            <columnOverride column="start_time" property="startTime" javaType="java.lang.Long" jdbcType="INTEGER"/>
-            <columnOverride column="end_time" property="endTime" javaType="java.lang.Long" jdbcType="INTEGER"/>
-            <columnOverride column="created_at" property="createdAt" javaType="java.lang.Long" jdbcType="INTEGER"/>
-            <columnOverride column="updated_at" property="updatedAt" javaType="java.lang.Long" jdbcType="INTEGER"/>
-            <columnOverride column="is_deleted" property="isDeleted" javaType="java.lang.Integer" jdbcType="TINYINT"/>
-        </table>
-        <table tableName="note_comment" domainObjectName="NoteCommentDo" enableCountByExample="false">
-            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
-            <columnOverride column="id" property="id" javaType="java.lang.Long" jdbcType="INTEGER"/>
-            <columnOverride column="note_id" property="noteId" javaType="java.lang.Long" jdbcType="INTEGER"/>
-            <columnOverride column="user_id" property="userId" javaType="java.lang.Long" jdbcType="INTEGER"/>
-            <columnOverride column="created_at" property="createdAt" javaType="java.lang.Long" jdbcType="INTEGER"/>
-            <columnOverride column="updated_at" property="updatedAt" javaType="java.lang.Long" jdbcType="INTEGER"/>
-            <columnOverride column="is_deleted" property="isDeleted" javaType="java.lang.Integer" jdbcType="TINYINT"/>
-        </table>
-        <table tableName="role" domainObjectName="RoleDo" enableCountByExample="false">
-            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
-            <columnOverride column="id" property="id" javaType="java.lang.Long" jdbcType="INTEGER"/>
-            <columnOverride column="created_at" property="createdAt" javaType="java.lang.Long" jdbcType="INTEGER"/>
-            <columnOverride column="updated_at" property="updatedAt" javaType="java.lang.Long" jdbcType="INTEGER"/>
-            <columnOverride column="is_deleted" property="isDeleted" javaType="java.lang.Integer" jdbcType="TINYINT"/>
-        </table>
-        <table tableName="scenic_spot" domainObjectName="ScenicSpotDo" enableCountByExample="false">
-            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
-            <columnOverride column="id" property="id" javaType="java.lang.Long" jdbcType="INTEGER"/>
-            <columnOverride column="division_id" property="divisionId" javaType="java.lang.Long" jdbcType="INTEGER"/>
-            <columnOverride column="play_time" property="playTime" javaType="java.lang.Long" jdbcType="INTEGER"/>
-            <columnOverride column="longitude" property="longitude" javaType="double" jdbcType="DOUBLE"/>
-            <columnOverride column="latitude" property="latitude" javaType="double" jdbcType="DOUBLE"/>
-            <columnOverride column="level" property="level" javaType="java.lang.Integer" jdbcType="TINYINT"/>
-            <columnOverride column="created_at" property="createdAt" javaType="java.lang.Long" jdbcType="INTEGER"/>
-            <columnOverride column="updated_at" property="updatedAt" javaType="java.lang.Long" jdbcType="INTEGER"/>
-            <columnOverride column="is_deleted" property="isDeleted" javaType="java.lang.Integer" jdbcType="TINYINT"/>
-        </table>
-        <table tableName="user" domainObjectName="UserDo" enableCountByExample="false">
-            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
-            <columnOverride column="id" property="id" javaType="java.lang.Long" jdbcType="INTEGER"/>
-            <columnOverride column="gender" property="gender" javaType="java.lang.Integer" jdbcType="TINYINT"/>
-            <columnOverride column="invalid_pwd_count" property="invalidPwdCount" javaType="java.lang.Long" jdbcType="INTEGER"/>
-            <columnOverride column="role_id" property="roleId" javaType="java.lang.Long" jdbcType="INTEGER"/>
-            <columnOverride column="created_at" property="createdAt" javaType="java.lang.Long" jdbcType="INTEGER"/>
-            <columnOverride column="updated_at" property="updatedAt" javaType="java.lang.Long" jdbcType="INTEGER"/>
-            <columnOverride column="is_deleted" property="isDeleted" javaType="java.lang.Integer" jdbcType="TINYINT"/>
-        </table>
-        <table tableName="user_follow" domainObjectName="UserFollowDo" enableCountByExample="false">
-            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
-            <columnOverride column="id" property="id" javaType="java.lang.Long" jdbcType="INTEGER"/>
-            <columnOverride column="user_id" property="userId" javaType="java.lang.Long" jdbcType="INTEGER"/>
-            <columnOverride column="follow_id" property="followId" javaType="java.lang.Long" jdbcType="INTEGER"/>
             <columnOverride column="created_at" property="createdAt" javaType="java.lang.Long" jdbcType="INTEGER"/>
             <columnOverride column="updated_at" property="updatedAt" javaType="java.lang.Long" jdbcType="INTEGER"/>
             <columnOverride column="is_deleted" property="isDeleted" javaType="java.lang.Integer" jdbcType="TINYINT"/>

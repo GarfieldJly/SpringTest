@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.garfield.wechatorder.dal.mapper.IdiomDoMapper">
+  <resultMap id="BaseResultMap" type="com.garfield.wechatorder.dal.domain.IdiomDo">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <result column="id" jdbcType="INTEGER" property="id" />
+    <result column="derivation" jdbcType="VARCHAR" property="derivation" />
+    <result column="example" jdbcType="VARCHAR" property="example" />
+    <result column="explanation" jdbcType="VARCHAR" property="explanation" />
+    <result column="pinyin" jdbcType="VARCHAR" property="pinyin" />
+    <result column="word" jdbcType="VARCHAR" property="word" />
+    <result column="abbreviation" jdbcType="VARCHAR" property="abbreviation" />
+    <result column="created_at" jdbcType="INTEGER" property="createdAt" />
+    <result column="updated_at" jdbcType="INTEGER" property="updatedAt" />
+    <result column="is_deleted" jdbcType="TINYINT" property="isDeleted" />
+  </resultMap>
+</mapper>
