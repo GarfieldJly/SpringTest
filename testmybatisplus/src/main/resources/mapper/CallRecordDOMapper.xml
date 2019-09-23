@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.garfield.testmybatisplus.mapper.CallRecordDOMapper" >
+  <resultMap id="BaseResultMap" type="com.garfield.testmybatisplus.domain.CallRecordDO" >
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="call_record_id" property="callRecordId" jdbcType="BIGINT" />
+    <result column="enterprise_id" property="enterpriseId" jdbcType="BIGINT" />
+    <result column="call_task_id" property="callTaskId" jdbcType="BIGINT" />
+    <result column="customer_id" property="customerId" jdbcType="BIGINT" />
+    <result column="user_id" property="userId" jdbcType="BIGINT" />
+    <result column="call_type" property="callType" jdbcType="TINYINT" />
+    <result column="customer_phone" property="customerPhone" jdbcType="VARCHAR" />
+    <result column="phone" property="phone" jdbcType="VARCHAR" />
+    <result column="call_start_time" property="callStartTime" jdbcType="TIMESTAMP" />
+    <result column="call_duration" property="callDuration" jdbcType="INTEGER" />
+    <result column="transfer_status" property="transferStatus" jdbcType="TINYINT" />
+    <result column="transfer_status_reason" property="transferStatusReason" jdbcType="VARCHAR" />
+    <result column="ai_call_duration" property="aiCallDuration" jdbcType="INTEGER" />
+    <result column="agent_call_duration" property="agentCallDuration" jdbcType="INTEGER" />
+    <result column="call_code" property="callCode" jdbcType="VARCHAR" />
+    <result column="intent_code" property="intentCode" jdbcType="VARCHAR" />
+    <result column="artificial_intent_code" property="artificialIntentCode" jdbcType="VARCHAR" />
+    <result column="dialogue_audio_url" property="dialogueAudioUrl" jdbcType="VARCHAR" />
+    <result column="call_id" property="callId" jdbcType="VARCHAR" />
+    <result column="scene_id" property="sceneId" jdbcType="INTEGER" />
+    <result column="is_read" property="isRead" jdbcType="TINYINT" />
+    <result column="is_delete" property="isDelete" jdbcType="TINYINT" />
+    <result column="dialog_count" property="dialogCount" jdbcType="INTEGER" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+    <result column="template_name" property="templateName" jdbcType="VARCHAR" />
+    <result column="call_task_name" property="callTaskName" jdbcType="VARCHAR" />
+    <result column="user_name" property="userName" jdbcType="VARCHAR" />
+    <result column="call_code_type" property="callCodeType" jdbcType="VARCHAR" />
+    <result column="tag" property="tag" jdbcType="JSON" />
+    <result column="is_callbacked" property="isCallbacked" jdbcType="TINYINT" />
+    <result column="is_reboot" property="isReboot" jdbcType="VARCHAR" />
+    <result column="modify_id" property="modifyId" jdbcType="BIGINT" />
+    <result column="template_code" property="templateCode" jdbcType="VARCHAR" />
+    <result column="template_version" property="templateVersion" jdbcType="VARCHAR" />
+    <result column="sms_send_result" property="smsSendResult" jdbcType="TINYINT" />
+  </resultMap>
+</mapper>

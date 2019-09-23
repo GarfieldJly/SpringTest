@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.garfield.testmybatisplus.mapper.CallTaskDOMapper" >
+  <resultMap id="BaseResultMap" type="com.garfield.testmybatisplus.domain.CallTaskDO" >
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="call_task_id" property="callTaskId" jdbcType="BIGINT" />
+    <result column="call_task_type" property="callTaskType" jdbcType="VARCHAR" />
+    <result column="persistent" property="persistent" jdbcType="VARCHAR" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="template_code" property="templateCode" jdbcType="VARCHAR" />
+    <result column="template_name" property="templateName" jdbcType="VARCHAR" />
+    <result column="call_phones" property="callPhones" jdbcType="VARCHAR" />
+    <result column="call_phone_params" property="callPhoneParams" jdbcType="VARCHAR" />
+    <result column="call_group_params" property="callGroupParams" jdbcType="VARCHAR" />
+    <result column="call_group_ids" property="callGroupIds" jdbcType="VARCHAR" />
+    <result column="agent_type" property="agentType" jdbcType="VARCHAR" />
+    <result column="start_time" property="startTime" jdbcType="TIMESTAMP" />
+    <result column="complete_time" property="completeTime" jdbcType="TIMESTAMP" />
+    <result column="end_time" property="endTime" jdbcType="TIMESTAMP" />
+    <result column="concurrent_rate" property="concurrentRate" jdbcType="DOUBLE" />
+    <result column="ai_count" property="aiCount" jdbcType="INTEGER" />
+    <result column="status" property="status" jdbcType="TINYINT" />
+    <result column="remark" property="remark" jdbcType="VARCHAR" />
+    <result column="enterprise_id" property="enterpriseId" jdbcType="BIGINT" />
+    <result column="user_id" property="userId" jdbcType="BIGINT" />
+    <result column="is_reboot" property="isReboot" jdbcType="VARCHAR" />
+    <result column="reboot_status" property="rebootStatus" jdbcType="VARCHAR" />
+    <result column="reboot_num" property="rebootNum" jdbcType="INTEGER" />
+    <result column="reboot_period" property="rebootPeriod" jdbcType="INTEGER" />
+    <result column="already_reboot_num" property="alreadyRebootNum" jdbcType="INTEGER" />
+    <result column="last_reboot_time" property="lastRebootTime" jdbcType="TIMESTAMP" />
+    <result column="is_wait_reboot" property="isWaitReboot" jdbcType="VARCHAR" />
+    <result column="again_call_times" property="againCallTimes" jdbcType="INTEGER" />
+    <result column="again_call_interval" property="againCallInterval" jdbcType="INTEGER" />
+    <result column="sms_template_id" property="smsTemplateId" jdbcType="BIGINT" />
+    <result column="sms_template_name" property="smsTemplateName" jdbcType="VARCHAR" />
+    <result column="status_info" property="statusInfo" jdbcType="VARCHAR" />
+    <result column="empty_number_switch" property="emptyNumberSwitch" jdbcType="TINYINT" />
+    <result column="single_record_switch" property="singleRecordSwitch" jdbcType="TINYINT" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+    <result column="is_delete" property="isDelete" jdbcType="TINYINT" />
+  </resultMap>
+</mapper>

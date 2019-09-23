@@ -3,6 +3,14 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/SpringTest.iml" filepath="$PROJECT_DIR$/.idea/SpringTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/exercise/exercise.iml" filepath="$PROJECT_DIR$/exercise/exercise.iml" />
+      <module fileurl="file://$PROJECT_DIR$/redis/redis.iml" filepath="$PROJECT_DIR$/redis/redis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/security/security.iml" filepath="$PROJECT_DIR$/security/security.iml" />
+      <module fileurl="file://$PROJECT_DIR$/testconcurrency/testconcurrency.iml" filepath="$PROJECT_DIR$/testconcurrency/testconcurrency.iml" />
+      <module fileurl="file://$PROJECT_DIR$/testmybatisplus/testmybatisplus.iml" filepath="$PROJECT_DIR$/testmybatisplus/testmybatisplus.iml" />
+      <module fileurl="file://$PROJECT_DIR$/testorika/testorika.iml" filepath="$PROJECT_DIR$/testorika/testorika.iml" />
+      <module fileurl="file://$PROJECT_DIR$/teststream/teststream.iml" filepath="$PROJECT_DIR$/teststream/teststream.iml" />
+      <module fileurl="file://$PROJECT_DIR$/testyml/testyml.iml" filepath="$PROJECT_DIR$/testyml/testyml.iml" />
       <module fileurl="file://$PROJECT_DIR$/wechatorder/wechatorder.iml" filepath="$PROJECT_DIR$/wechatorder/wechatorder.iml" />
     </modules>
   </component>

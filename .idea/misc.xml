@@ -7,8 +7,17 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/wechatorder/pom.xml" />
+        <option value="$PROJECT_DIR$/exercise/pom.xml" />
+        <option value="$PROJECT_DIR$/testyml/pom.xml" />
+        <option value="$PROJECT_DIR$/testorika/pom.xml" />
+        <option value="$PROJECT_DIR$/testmybatisplus/pom.xml" />
+        <option value="$PROJECT_DIR$/teststream/pom.xml" />
+        <option value="$PROJECT_DIR$/security/pom.xml" />
+        <option value="$PROJECT_DIR$/redis/pom.xml" />
       </list>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="1.8" project-jdk-type="JavaSDK" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="false" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/testconcurrency" />
+  </component>
 </project>

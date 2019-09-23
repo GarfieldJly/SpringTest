@@ -9,11 +9,13 @@ import com.garfield.testorika.domain.vo.PersonNameList;
 import com.garfield.testorika.domain.vo.PersonNamePartsVO;
 import com.garfield.testorika.domain.vo.PersonVO;
 import com.garfield.testorika.domain.vo.SourceVO;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
+import com.google.common.collect.Lists;
+import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Date;
 import java.util.List;
+import java.util.UUID;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 import ma.glasnost.orika.BoundMapperFacade;
 import ma.glasnost.orika.MapperFacade;
 import ma.glasnost.orika.MapperFactory;
@@ -21,7 +23,15 @@ import ma.glasnost.orika.impl.DefaultMapperFactory;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.expression.EvaluationContext;
+import org.springframework.expression.Expression;
+import org.springframework.expression.ExpressionParser;
+import org.springframework.expression.spel.standard.SpelExpressionParser;
+import org.springframework.expression.spel.support.StandardEvaluationContext;
 import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.util.CollectionUtils;
+import org.springframework.util.ObjectUtils;
+import org.springframework.util.SocketUtils;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -181,11 +191,107 @@ public class TestorikaApplicationTests {
     System.out.println(person3VO.toString());
   }
 
+
   @Test
-  public void test(){
-    Date date = new Date();
-    SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-    String value = format.format(date);
-    System.out.println(value);
+  public void helloWorld() {
+    ExpressionParser parser = new SpelExpressionParser();
+    Expression expression = parser.parseExpression("('Hello' + ' World').concat(#end)");
+    EvaluationContext context = new StandardEvaluationContext();
+    context.setVariable("end", "!");
+    Object value = expression.getValue(context);
+    System.out.println("value is :"+value);
   }
+
+  @Test
+  public void testEL(){
+//    String test = " '车' matches '.*(开车|开会).*' ";
+//
+//    SpelExpressionParser expressionParser = new SpelExpressionParser();
+//    Boolean expressionRes = expressionParser.parseExpression(test).getValue(Boolean.class);
+//    System.out.println(expressionRes);
+
+    String uuid = UUID.randomUUID().toString();
+    Integer length = uuid.length();
+    System.out.println(length);
+
+  }
+
+  /**
+   * com.google.common.collect.Lists 类的用法
+   */
+  @Test
+  public void testPartition(){
+    //step.1 集合切割正常逻辑
+    List<Integer> numList = Lists.newArrayList(1,2,3,4,5,6,7);
+    List<List<Integer>> partitionList = Lists.partition(numList, 3);
+    if(!ObjectUtils.isEmpty(partitionList)){
+      for (List<Integer> item : partitionList){
+        System.out.println("集合切割正常逻辑:"+item);
+      }
+    }
+
+    //step.2 切割数量大于集合数量
+    List<Integer> numList2 = Lists.newArrayList(1);
+    List<List<Integer>> partitionList2 = Lists.partition(numList2, 3);
+    if(!CollectionUtils.isEmpty(partitionList2)){
+      for (List<Integer> item : partitionList2){
+        System.out.println("切割数量大于集合数量:"+item);
+      }
+    }
+
+    //step.3 修改切割后的集合，检查原集合是否被修改
+    //原集合会被修改
+    //partition返回的是原list的subview.视图,即原list改变后,partition之后的结果也会随着改变
+    List<Integer> numList3 = Lists.newArrayList(1,2,3,4,5,6,7,89,9);
+    List<List<Integer>> partList3 = Lists.partition(numList3, 3);
+    numList3.set(4,77);
+    if (!CollectionUtils.isEmpty(partList3)) {
+      for (List<Integer> list : partList3) {
+//        for(int i=0,len = list.size();i<len;i++){
+//          list.set(i,8);
+//        }
+        System.out.println(list);
+      }
+      //打印原集合
+      System.out.println(numList3.toString());
+
+    }
+  }
+
+  @Test
+  public void testList(){
+    List<String> list = new ArrayList<>();
+    addList(list);
+    System.out.println(list.size());
+  }
+
+  private void addList(List<String> list){
+    list.add("jly");
+
+  }
+
+  @Test
+  public void testCollectors(){
+    // 定义人名数组
+    final String[] names = {"Zebe", "Hebe", "Mary", "July", "David"};
+    Stream<String> stream1 = Stream.of(names);
+    Stream<String> stream2 = Stream.of(names);
+    Stream<String> stream3 = Stream.of(names);
+// 拼接成 [x, y, z] 形式
+    String result1 = stream1.collect(Collectors.joining(", ", "[", "]"));
+// 拼接成 x | y | z 形式
+    String result2 = stream2.collect(Collectors.joining(" | ", "", ""));
+// 拼接成 x -> y -> z] 形式
+    String result3 = stream3.collect(Collectors.joining(" -> ", "", ""));
+    System.out.println(result1);
+    System.out.println(result2);
+    System.out.println(result3);
+
+    //stream3使用过流已关闭，再次使用会报错 ，流类型于迭代器
+    String result4 = stream3.collect(Collectors.joining(" -> ", "", ""));
+    System.out.println(result4);
+
+  }
+
+
 }

@@ -98,7 +98,7 @@ public class MybatisConfigGenerator {
                 return "INTEGER";
             case "mediumint":
                 return "INTEGER";
-            case "enum":
+            case "enums":
                 return "VARCHAR";
             case "datetime":
                 return "TIMESTAMP";
@@ -121,7 +121,7 @@ public class MybatisConfigGenerator {
                 return "java.lang.Integer";
             case "mediumint":
                 return "java.lang.Long";
-            case "enum":
+            case "enums":
                 return "java.lang.Integer";
             case "date":
                 return "java.util.Date";
